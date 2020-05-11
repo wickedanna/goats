@@ -1,7 +1,13 @@
 import React from 'react';
 import './App.scss';
+import goatData from '../helpers/data/goatData';
 
 class App extends React.Component {
+  componentDidMount() {
+    const goats = goatData.getGoats();
+    console.error('goats', goats);
+  }
+
   render() {
     return (
       <div className="App">
