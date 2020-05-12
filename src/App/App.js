@@ -1,18 +1,24 @@
 import React from 'react';
 import './App.scss';
+
 import goatData from '../helpers/data/goatData';
+import GoatCorral from '../components/GoatCorral/GoatCorral';
 
 class App extends React.Component {
+  state = {
+    goats: [],
+  }
+
   componentDidMount() {
     const goats = goatData.getGoats();
-    console.error('goats', goats);
+    this.setState({ goats });
   }
 
   render() {
     return (
       <div className="App">
-        <h2>INSIDE APP COMPONENT</h2>
-        <button className="btn btn-info">CRAP</button>
+        <h1>GOAT YOGA LTD</h1>
+        <GoatCorral goats={this.state.goats}/>
       </div>
     );
   }
