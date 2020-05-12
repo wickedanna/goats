@@ -14,11 +14,18 @@ class App extends React.Component {
     this.setState({ goats });
   }
 
+  useAGoat = (goatId) => {
+    goatData.useGoat(goatId);
+    const goats = goatData.getGoats();
+    this.setState({ goats });
+  }
+
   render() {
+    const { goats } = this.state;
     return (
       <div className="App">
         <h1>GOAT YOGA LTD</h1>
-        <GoatCorral goats={this.state.goats}/>
+        <GoatCorral goats={goats} useAGoat={this.useAGoat}/>
       </div>
     );
   }
