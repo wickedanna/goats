@@ -6,8 +6,9 @@ import Goat from '../Goat/Goat';
 
 class GoatCorral extends React.Component {
   render() {
-    const makeGoats = this.props.goats.map((goat) => (
-    <Goat key={goat.id} goat={goat}/>
+    const { goats, useAGoat } = this.props;
+    const makeGoats = goats.map((goat) => (
+    <Goat key={goat.id} goat={goat} useAGoat={useAGoat}/>
     ));
 
     return (
